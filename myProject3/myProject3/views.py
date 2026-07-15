@@ -1,4 +1,8 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html')
+    context = {
+        "data" :{"name": "Shiv",
+        "age":"Infinite"}
+    }
+    return render(request, 'index.html', context)
