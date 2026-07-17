@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>#1 template basic</title>
+    </head>
+    <body>
+        <h1> Templates basic</h1>
+        <!-- this is comment-->
+        {% comment%} this is django comment used in 
+        professional and not caught in production
+         {% endcomment %}
+         {# this is single line comment and hide in production #}
+         <p>this is a random paragraph</p>
+         <p> this is also a random paragraph</p>
+         {#single variable#}
+         <h3>access varibale</h3>
+         <p>Name: {{name}}</p>
+         <p>Age: {{age}}</p>
+         <h3>access list</h3>
+         <p>skill: {{skill}}</p>
+         <p>skill: {{skill.0}}</p>
+         <p>skill: {{skill.1}}</p>
+         <h3>access object attribute</h3>
+         <p>user name: {{user.name}}</p>
+         <p>user age: {{user.age}}</p>
+         <h3>access dictonary attribute</h3>
+         <h4>Blog Information</h4>
+         <p>Title: {{blog.title}}</p>
+         <p>content: {{blog.content}}</p>
+         <p>created_at: {{blog.created_at}}</p>
+         <h4>in safe feature</h4>
+         <p>content: {{blog.content |safe}}</p>
+         <h3>access default value</h3>
+         <p>Default empty value: {{empty_value|default:"no value provided"}}</p>
+          <p>Default empty value: {{empty_value|default_if_none:"no data"}}</p>
+          <h3>access nested value</h3>
+          <p>Nested value: {{blog.author.name}}</p>
+
+    </body>
+</html>
