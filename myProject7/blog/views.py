@@ -9,8 +9,8 @@ def list(request):
         {"title":"Django rest framework","is_featured":False,"author":"kunal Singh"},
     ]
     context = {
-        "blogs": "blogs",
+        "blogs": blogs,
         "today": datetime.now(),
-        "html_code":"<h1>Welcome tp my blog</h1>",
+        "html_code":"<b>Welcome to my blog</b>",
     }
     return render(request, 'blog/blog_list.html', context)

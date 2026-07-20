@@ -9,6 +9,52 @@
 
     <h1>Hello Abhishek</h1>
     <p>Name: {{name}}</p>
+    <p>{{today}}</p>
 
+    <h1>conditional stmt</h1>
+    {% comment  %} If Else {% endcomment %}
+    {% if blogs.1.is_featured%}
+    <h2><b>{{blogs.1.title}} - Normal Blog</b></h2>
+    {% else %}
+    <h2>{{blogs.1.title}} - Regular Blogs</h2>
+    {% endif %}
+
+    <h1>for loop</h1>
+    <ul>
+    {%for blog in blogs%} 
+    <li>{{forloop.count}}. {{blog.title}} - {{blog.author}}</li>
+    {% endfor %}
+    <li>no blogs available</li>
+    </ul>
+
+     <h1>use of with</h1>
+     {% with total_blogs=blogs|length %}
+     <p>Total Blogs: {{total_blogs}}</p>
+     {% endwith %}
+
+     <hr>
+     <h1>cycle</h1>
+     <h2>blog in table</h2>
+     <table border="1" cellpadding="5" cellspacing="0">
+        {% for blog in blogs %}
+        <tr style="background-color: {% cycle 'lightblue' 'lightgreen'%}">
+        <td>{{forloop.counter}}</td>
+        <td>{{blog.title}}</td>
+        <td>{{blog.author}}</td>
+        </tr>
+        {% endfor %}
+     </table>
+
+     <h1>firstof</h1>
+     <p>author:{% firstof blog.0.author "AC"%}</p>  <!--fisrtof update the value-->
+
+     <h1>verbatim</h1>
+     {% verbatim  %}
+     <p>author: {{blog.1.author}}</p>
+     {% endverbatim  %}
+
+     <h1>autoescape</h1>
+     <p>default(Safe escaped): {{html_code}}</p>
+     <p>dautoescaped off: {{html_code | safe}}</p>  <!--isse off ho jayega-->
 </body>
 </html>

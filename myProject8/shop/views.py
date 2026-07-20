@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def hii(request):
-    cont = {
-        "name": "kunal",
-    }
-    return render(request, 'blog/blog.html' , {"cont":cont})
+def home(request):
+    return render(request, 'home.html')
+
+def about(request):
+    return render(request, 'shop/about.html')
