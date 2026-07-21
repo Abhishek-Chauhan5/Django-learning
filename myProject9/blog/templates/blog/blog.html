@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} blog page {%endblock%}
+
+{%block content %}
+   <h1>blog us</h1>
+   {% regroup students by class as grouped_students %}
+   <ul>
+      {%for group in grouped_students%}
+      <li>Class {{ group.grouper}}
+      <ul>
+         {% for student in group.list %}
+         <li>{{ student.name}}</li>
+         {%endfor%}
+      </ul>
+      </li>
+      {%endfor%}
+   </ul>
+{% endblock%}   
