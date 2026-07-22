@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% block content %}
+{% load static %}
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-label">Welcome to my portfolio</p>
+        <h1>Hi, I'm Abhishek Singh Chauhan</h1>
+        <p class="hero-text">
+            I build modern web applications with Python, Django, HTML, CSS, JavaScript, and React.
+            I enjoy turning ideas into clean, responsive, and user-friendly digital experiences.
+        </p>
+        <div class="hero-actions">
+            <a href="{% url 'about' %}" class="btn btn-primary">About Me</a>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<section class="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-grid">
+        <div class="project-card">
+            <img src="{% static 'images/dice.jpg' %}" alt="project1">
+            <h3>Dice Store</h3>
+        </div>
+        <div class="project-card">
+            <img src="{% static 'images/random.jpg' %}" alt="project2">
+            <h3>Random Store</h3>
+        </div>
+        <div class="project-card">
+            <img src="{% static 'images/starbugs.jpg' %}" alt="project3">
+            <h3>Coffee</h3>
+        </div>
+        <div class="project-card">
+            <img src="{% static 'images/street.jpg' %}" alt="project4">
+            <h3>Street App</h3>
+        </div>
+    </div>
+</section>
+{% endblock %}
